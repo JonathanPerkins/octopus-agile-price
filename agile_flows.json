@@ -1,0 +1,758 @@
+[
+    {
+        "id": "6049b112.e9346",
+        "type": "tab",
+        "label": "Octopus Agile",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "aa9467c1.f3c0a8",
+        "type": "subflow",
+        "name": "Query database",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 100,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "c53946e9.25e098"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 560,
+                "y": 120,
+                "wires": [
+                    {
+                        "id": "cc52a368.d4cb",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "bd13ab04.e64df",
+        "type": "subflow",
+        "name": "Count future records",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "f55861b1.4bfb4"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 740,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "f8897830.c5079",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "f2aa11e5.e154a",
+        "type": "subflow",
+        "name": "Get rates",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "7597344f.022044"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 540,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "c0dcf6e6.e6a2",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "c081cf5c.7b1128",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d479f7a8.e751f",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Octopus Energy",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a5455f42.9e80a8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Agile Tariff",
+        "tab": "d479f7a8.e751f",
+        "order": 1,
+        "disp": true,
+        "width": 14,
+        "collapse": false
+    },
+    {
+        "id": "2d05fc95.010054",
+        "type": "sqlitedb",
+        "z": "",
+        "db": "/home/pi/agile_rates.sqlite",
+        "mode": "RWC"
+    },
+    {
+        "id": "e79d5203.63441",
+        "type": "ui_group",
+        "z": "",
+        "name": "Current rate",
+        "tab": "d479f7a8.e751f",
+        "order": 2,
+        "disp": true,
+        "width": 8,
+        "collapse": false
+    },
+    {
+        "id": "4505503d.318248",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "cecd521d.6d419",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5dd35e6a.9be36",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b4b315e7.813c78",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "dcf8ead9.6a1d1",
+        "type": "inject",
+        "z": "6049b112.e9346",
+        "name": "Update rates",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "fd458089.cccb4"
+            ]
+        ]
+    },
+    {
+        "id": "da8f7ec7.f17e78",
+        "type": "sqlite",
+        "z": "6049b112.e9346",
+        "mydb": "2d05fc95.010054",
+        "sqlquery": "batch",
+        "sql": "INSERT INTO rates VALUES ($timestamp, $price) ON CONFLICT DO NOTHING;",
+        "name": "Agile batch",
+        "x": 1330,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5a8bb829.2399a8",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Reformat rates",
+        "func": "// Reformat the results, making msg.payload an\n// object with timestamps as keys and the \n// unit price inc VAT as values. \n\nvar output = {};\n\nfor (var key in msg.payload.results) {\n    // Parse time string and convert to seconds since epoch\n    var timestamp = Date.parse(msg.payload.results[key].valid_from) / 1000;\n    \n    output[timestamp] = msg.payload.results[key].value_inc_vat;  \n}\n\nmsg.payload = output;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 900,
+        "y": 160,
+        "wires": [
+            [
+                "d4876b51.8299"
+            ]
+        ]
+    },
+    {
+        "id": "d4876b51.8299",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Insert into database",
+        "func": "msg.topic = \"BEGIN TRANSACTION;\";\n\nfor (var key in msg.payload) {\n    // Using sqlite upsert extention to only insert if key does not exist\n    msg.topic += \"INSERT INTO rates VALUES ('\" + key + \"', '\" + msg.payload[key] + \"') ON CONFLICT DO NOTHING;\"\n}\nmsg.topic += \"COMMIT;\"\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1120,
+        "y": 160,
+        "wires": [
+            [
+                "da8f7ec7.f17e78"
+            ]
+        ]
+    },
+    {
+        "id": "d30f2422.1787a",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "HTTP status",
+        "func": "// This function node exists to display the result of the HTTP request\n// as a status line below this node.\n\nlet result;\nlet date = new Date();  \nlet options = {  \n    weekday: \"short\", year: \"numeric\", month: \"short\",  \n    day: \"numeric\", hour: \"2-digit\", minute: \"2-digit\"  \n};  \nlet dateStr = date.toLocaleTimeString(\"en-gb\", options);\n\nif (msg.statusCode == 200) {\n\n    result = \"OK at: \" + dateStr;\n    node.status({fill:\"green\",shape:\"dot\",text:result});\n}\nelse {\n    result = \"Error: \" + msg.statusCode + \" at: \" + dateStr;\n    node.status({fill:\"red\",shape:\"dot\",text:result});\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 890,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c53946e9.25e098",
+        "type": "function",
+        "z": "aa9467c1.f3c0a8",
+        "name": "Request to SQL",
+        "func": "// Requests one or more records from the database\n// Input request is of the form:\n//\n//   msg.payload.timestamp - the reference timestamp\n//   msg.payload.numBefore - the number of half hour records prior to the reference\n//   msg.payload.numAfter  - the number of half hour records after the reference\n//\n// Will always return at least the record containing the reference timestamp.\n// numBefore and numAfter may be zero.\n\n// database uses seconds since epoch\nvar timestamp = msg.payload.timestamp / 1000;\n\nvar firstTimestamp = Math.floor((timestamp - (msg.payload.numBefore * 1800)) / 1800) * 1800;\nvar lastTimestamp  = Math.floor((timestamp + (msg.payload.numAfter * 1800)) / 1800) * 1800;\n\nmsg.topic = \"SELECT * FROM rates WHERE start_time>='\" + firstTimestamp + \"' AND start_time<='\" + lastTimestamp + \"';\"\nmsg.payload = null;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 240,
+        "y": 120,
+        "wires": [
+            [
+                "cc52a368.d4cb"
+            ]
+        ]
+    },
+    {
+        "id": "cc52a368.d4cb",
+        "type": "sqlite",
+        "z": "aa9467c1.f3c0a8",
+        "mydb": "2d05fc95.010054",
+        "sqlquery": "msg.topic",
+        "sql": "INSERT INTO rates VALUES ($timestamp, $price) ON CONFLICT DO NOTHING;",
+        "name": "Agile rates",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d7adb6ba.4aaa48",
+        "type": "comment",
+        "z": "aa9467c1.f3c0a8",
+        "name": "Input and output message definitions",
+        "info": "## To request data from the database\n\nlet request = {};\n\nrequest.timestamp = msg.payload;\nrequest.numBefore = 1;\nrequest.numAfter  = 1;\n\nmsg.payload = request;\n\n## Result returned as\n\nmsg.payload = [\n   {\"start_time\":1584288000,\"cost\":20.349},\n   {\"start_time\":1584289800,\"cost\":21.504},\n   {\"start_time\":1584291600,\"cost\":21.147}\n];\n",
+        "x": 220,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6e830fe9.232508",
+        "type": "inject",
+        "z": "6049b112.e9346",
+        "name": "Tick",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "60",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "x": 90,
+        "y": 420,
+        "wires": [
+            [
+                "c7beb6a0.e1d368",
+                "1e44dca0.8a5ce3"
+            ]
+        ]
+    },
+    {
+        "id": "c7beb6a0.e1d368",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Request -6/+12 hrs",
+        "func": "// Requests -6...+12 hrs from now.\n\nlet request = {};\n\nrequest.timestamp = msg.payload;\nrequest.numBefore = 12;\nrequest.numAfter  = 24;\n\nmsg.payload = request;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "d00a8fb3.6102a"
+            ]
+        ]
+    },
+    {
+        "id": "1e44dca0.8a5ce3",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Request now +/- 1",
+        "func": "// Requests 3 records around the current rate\n\nlet request = {};\n\nrequest.timestamp = msg.payload;\nrequest.numBefore = 1;\nrequest.numAfter  = 1;\n\nmsg.payload = request;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 300,
+        "y": 360,
+        "wires": [
+            [
+                "cad76fdd.6aa99"
+            ]
+        ]
+    },
+    {
+        "id": "d00a8fb3.6102a",
+        "type": "subflow:aa9467c1.f3c0a8",
+        "z": "6049b112.e9346",
+        "name": "Query database",
+        "env": [],
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "a8d67f48.2a3ca"
+            ]
+        ]
+    },
+    {
+        "id": "cad76fdd.6aa99",
+        "type": "subflow:aa9467c1.f3c0a8",
+        "z": "6049b112.e9346",
+        "name": "Query database",
+        "env": [],
+        "x": 500,
+        "y": 360,
+        "wires": [
+            [
+                "b02ddb8b.8c1a98",
+                "433a6742.a7ce18"
+            ]
+        ]
+    },
+    {
+        "id": "a8d67f48.2a3ca",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Prepare graph",
+        "func": "// Prepares the line graph in the format:\n\n// [{\n//   \"series\": [\"Price\"],\n//   \"data\": [\n//       [{ \"x\": 1504029632890, \"y\": 5 },\n//        { \"x\": 1504029636001, \"y\": 4 },\n//        { \"x\": 1504029638656, \"y\": 2 }\n//       ]\n//   ],\n//   \"labels\": [\"\"]\n// }]\n\nvar data = [];\nvar labels = [];\nvar series = [\"Price\", \"Now\"];\nvar dataSeries = [];\n\nvar leftX = 0;\nvar rightX = 0;\n\nfor (var i=0; i<msg.payload.length; i++) {\n    \n    var item = {};\n    item['x'] = (msg.payload[i].start_time * 1000);\n    item['y'] = msg.payload[i].cost;\n\n    if (i === 0) {\n        leftX = item['x'];\n    }\n    else if (i == (msg.payload.length - 1)) {\n        rightX = item['x'];\n    }\n    \n    dataSeries.push(item);    \n}\n\ndata.push(dataSeries);\n\n// Now - a vertical line to show current time\ndataSeries = [ { 'x': Date.now(), 'y': 30}, { 'x': Date.now(), 'y': -5}];\ndata.push(dataSeries);\n\n// A horizontal line to show zero cost\nif (leftX && rightX) {\n    series.push(\"Zero\");\n    dataSeries = [ { 'x': leftX, 'y': 0}, { 'x': rightX, 'y': 0}];\n    data.push(dataSeries);\n}\n\nlabels.push(\"\");\n\nvar info = {};\ninfo.series = series;\ninfo.data = data;\ninfo.labels = labels;\n\n\nmsg.payload = [];\nmsg.payload.push(info);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "8f61dbf5.7989a"
+            ]
+        ]
+    },
+    {
+        "id": "b02ddb8b.8c1a98",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Prepare display",
+        "func": "// Database result is an array of 3 JSON objects, e.g:\n//  msg.payload = [\n//     {\"start_time\":1584288000,\"cost\":20.349},\n//     {\"start_time\":1584289800,\"cost\":21.504},\n//     {\"start_time\":1584291600,\"cost\":21.147}\n//  ];\n\nlet numValues = msg.payload.length;\n\nif (numValues > 0) {\n  // Calculate the trend from least squares slope of the cost values\n  let sigmaX = 0;\n  let sigmaY = 0;\n  let sigmaXY = 0;\n  let sigmaXX = 0;\n  for (let x=0; x<numValues; x++) {\n    let y = msg.payload[x].cost;\n    sigmaX += x;\n    sigmaY += y;\n    sigmaXY += (x * y);\n    sigmaXX += (x * x);\n  }\n  let slope = ((numValues * sigmaXY) - (sigmaX * sigmaY))/((numValues * sigmaXX) - (sigmaX * sigmaX));\n  let trend = \"\";\n  \n  if (slope > 0.6) {\n    trend += \"--trend UP\";\n  }\n  else if (slope > 0.1) {\n    trend += \"--trend up\";\n  }\n  else if (slope < -0.6) {\n    trend += \"--trend DOWN\";\n  }\n  else if (slope < -0.1) {\n    trend += \"--trend down\";\n  }\n\n  // For debugging thresholds\n  node.status({text:\"slope: \"+slope.toFixed(2)+\" \"+trend});\n\n  // TODO vary brightness according to time of day?\n  let brightness = 0.3;\n\n  // Payload is the command arguments for the python display driver script\n  msg.payload = `${trend} --brightness ${brightness} --cost ${msg.payload[1].cost.toFixed(1)}`;\n}\nelse {\n    msg.payload = \"--cost nodata\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 320,
+        "wires": [
+            [
+                "97e752e3.790a3"
+            ]
+        ]
+    },
+    {
+        "id": "433a6742.a7ce18",
+        "type": "function",
+        "z": "6049b112.e9346",
+        "name": "Prepare gauge",
+        "func": "// Database result is an array of 3 JSON objects, e.g:\n//  msg.payload = [\n//     {\"start_time\":1584288000,\"cost\":20.349},\n//     {\"start_time\":1584289800,\"cost\":21.504},\n//     {\"start_time\":1584291600,\"cost\":21.147}\n//  ];\n\n// The current rate is the middle one\n\nmsg.payload = msg.payload[1].cost.toFixed(1);\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 400,
+        "wires": [
+            [
+                "87540086.66acd8"
+            ]
+        ]
+    },
+    {
+        "id": "8f61dbf5.7989a",
+        "type": "ui_chart",
+        "z": "6049b112.e9346",
+        "name": "Rate graph",
+        "group": "a5455f42.9e80a8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Rate (p/kWh)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "step",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": true,
+        "colors": [
+            "#1f77b4",
+            "#e46c02",
+            "#00ee48",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 890,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97e752e3.790a3",
+        "type": "exec",
+        "z": "6049b112.e9346",
+        "command": "/home/pi/display_driver.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "30",
+        "oldrc": false,
+        "name": "Update display",
+        "x": 900,
+        "y": 320,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "87540086.66acd8",
+        "type": "ui_gauge",
+        "z": "6049b112.e9346",
+        "name": "Current cost",
+        "group": "e79d5203.63441",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "",
+        "label": "p/kWh",
+        "format": "{{value}}",
+        "min": "-5",
+        "max": "30",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 890,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "245be117.88da5e",
+        "type": "comment",
+        "z": "6049b112.e9346",
+        "name": "Database update when more records needed",
+        "info": "",
+        "x": 190,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "31e4a06.fc5dae",
+        "type": "comment",
+        "z": "6049b112.e9346",
+        "name": "Refresh display every minute",
+        "info": "",
+        "x": 140,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "f55861b1.4bfb4",
+        "type": "function",
+        "z": "bd13ab04.e64df",
+        "name": "Request to SQL",
+        "func": "// Count the number of furure records available from the current time onwards.\n// Excludes the current half hour, may return zero.\n\n// database uses seconds since epoch, time at the beginning of each half hour\nvar timestamp = Date.now() / 1000;\n\nmsg.topic = \"SELECT COUNT(start_time) FROM rates WHERE start_time>'\" + timestamp + \"';\"\nmsg.payload = null;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 200,
+        "y": 80,
+        "wires": [
+            [
+                "69f72e22.fa8bb8"
+            ]
+        ]
+    },
+    {
+        "id": "69f72e22.fa8bb8",
+        "type": "sqlite",
+        "z": "bd13ab04.e64df",
+        "mydb": "2d05fc95.010054",
+        "sqlquery": "msg.topic",
+        "sql": "INSERT INTO rates VALUES ($timestamp, $price) ON CONFLICT DO NOTHING;",
+        "name": "Agile rates",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "f8897830.c5079"
+            ]
+        ]
+    },
+    {
+        "id": "f8897830.c5079",
+        "type": "function",
+        "z": "bd13ab04.e64df",
+        "name": "Extract count",
+        "func": "// Results is an array with one object:\n//\n// msg.payload[0] = { COUNT(start_time): 0 }\n//\n\nmsg.payload = msg.payload[0][\"COUNT(start_time)\"];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fd458089.cccb4",
+        "type": "subflow:bd13ab04.e64df",
+        "z": "6049b112.e9346",
+        "name": "Count future records",
+        "env": [],
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "947605ae.3cc158"
+            ]
+        ]
+    },
+    {
+        "id": "947605ae.3cc158",
+        "type": "switch",
+        "z": "6049b112.e9346",
+        "name": "Less than 15",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "lt",
+                "v": "15",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 120,
+        "wires": [
+            [
+                "56a05056.640f28"
+            ]
+        ]
+    },
+    {
+        "id": "7597344f.022044",
+        "type": "function",
+        "z": "f2aa11e5.e154a",
+        "name": "Prepare API",
+        "func": "// Prepares an API call for the Agile rates\n\n// Agile product code\nconst product = \"AGILE-18-02-21\";\n\n// Region code: A is Eastern region\nconst region = 'A';\n\n// Tariff code\nconst tariff = \"E-1R-\" + product + \"-\" + region;\n\n// Build URL\nmsg.url = \"https://api.octopus.energy/v1/products/\" + product + \"/electricity-tariffs/\" + tariff + \"/standard-unit-rates\";\n\n// Fetch from -12 hours to +24 hours\nconst now = new Date();\nconst from = new Date(now.getTime() - (12 * 3600 * 1000));\nconst to   = new Date(now.getTime() + (24 * 3600 * 1000));\n\n// HTTP node is configured to convert msg.payload to query string parameters\nmsg.payload = { 'period_from': from.toISOString(), 'period_to': to.toISOString() };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 190,
+        "y": 80,
+        "wires": [
+            [
+                "c0dcf6e6.e6a2"
+            ]
+        ]
+    },
+    {
+        "id": "c0dcf6e6.e6a2",
+        "type": "http request",
+        "z": "f2aa11e5.e154a",
+        "name": "http request json",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": true,
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "56a05056.640f28",
+        "type": "subflow:f2aa11e5.e154a",
+        "z": "6049b112.e9346",
+        "name": "Get rates",
+        "env": [],
+        "x": 720,
+        "y": 120,
+        "wires": [
+            [
+                "d30f2422.1787a",
+                "5a8bb829.2399a8"
+            ]
+        ]
+    }
+]
