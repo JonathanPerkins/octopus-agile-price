@@ -1,0 +1,7 @@
+# Prefer the project to be designated by GitHub as JavaScript rather than Python
+
+# Try hinting the flow file
+*.json linguist-language=JavaScript
+
+# And ask it to ignore the Python display driver for language classification
+*.py -linguist-detectable
