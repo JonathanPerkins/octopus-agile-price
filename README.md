@@ -1,7 +1,6 @@
 # Octopus Agile Price Display
 
-A simple Node-RED flow and Python script to display the current Octopus Agile
-electricity price on a RaspberryPi equipped with a Pimoroni Micro Dot pHAT display:
+A simple Node-RED flow and Python script to display the current [Octopus Energy](https://octopus.energy/) half hourly dynamic electricity [Agile tariff](https://octopus.energy/agile/) on a RaspberryPi equipped with a Pimoroni Micro Dot pHAT display:
 
 ![Raspberry Pi display](docs/display.jpg)
 
